@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: @PiniuPagesBundle/Resources/config/config.yml }
 
 framework:
     #esi:             ~
@@ -33,7 +34,9 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ PiniuProductsBundle ]
+    bundles:
+        - PiniuPagesBundle
+        - PiniuProductsBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

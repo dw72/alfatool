@@ -1,6 +1,9 @@
 {% extends "PiniuProductsBundle::layout.html.twig" %}
 
 {% block body %}
+    <header>
+        <h1>Katalog części</h1>
+    </header>
     {% for product in products %}
         <article class="product product-{{ product.id }} thumb">
             <header>

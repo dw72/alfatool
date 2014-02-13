@@ -1,0 +1,57 @@
+.contact-notice {
+    text-align: center;
+    padding: 10px;
+    background: #DFF2BF;
+    border: 1px solid;
+    color: #4F8A10;
+    margin-bottom: 10px;
+}
+
+.address {
+    margin-bottom: 25px;
+}
+
+.address p {
+    margin: 0;
+    padding: 0;
+}
+
+form.contact div {
+    clear: left;
+    margin-bottom: 10px;
+}
+
+form.contact label {
+    float: left;
+    margin-right: 10px;
+    text-align: right;
+    width: 100px;
+    font-weight: bold;
+    vertical-align: top;
+    padding-top: 11px;
+}
+
+form.contact input[type="text"],
+form.contact input[type="email"] {
+    padding: 5px;
+    width: 500px;
+    line-height: 24px;
+    min-height: 24px;
+}
+
+form.contact textarea {
+    padding: 5px;
+    width: 500px;
+    height: 150px;
+    line-height: 24px;
+}
+
+form.contact input[type="submit"] {
+    margin-left: 110px;
+}
+
+iframe {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+}

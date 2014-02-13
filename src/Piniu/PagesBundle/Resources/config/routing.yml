@@ -1,0 +1,11 @@
+piniu_pages_about:
+    pattern:  /about
+    defaults: { _controller: PiniuPagesBundle:Pages:about }
+
+piniu_pages_regulations:
+    pattern:  /regulations
+    defaults: { _controller: PiniuPagesBundle:Pages:regulations }
+
+piniu_pages_contact:
+    pattern:  /contact
+    defaults: { _controller: PiniuPagesBundle:Pages:contact }

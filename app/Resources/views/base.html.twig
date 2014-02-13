@@ -20,12 +20,10 @@
                     {% block navigation %}
                         <nav>
                             <ul class="navigation">
-                                {#<li><a href="{{ path('BloggerBlogBundle_homepage') }}">Home</a></li>#}
-                                {#<li><a href="{{ path('BloggerBlogBundle_about') }}">About</a></li>#}
-                                {#<li><a href="{{ path('BloggerBlogBundle_contact') }}">Contact</a></li>#}
                                 <li><a href="{{ path('piniu_products_homepage') }}">Katalog</a></li>
-                                <li><a href="">O nas</a></li>
-                                <li><a href="">Kontakt</a></li>
+                                <li><a href="{{ path('piniu_pages_about') }}">O nas</a></li>
+                                <li><a href="{{ path('piniu_pages_regulations') }}">Regulamin</a></li>
+                                <li><a href="{{ path('piniu_pages_contact') }}">Kontakt</a></li>
                             </ul>
                         </nav>
                     {% endblock %}

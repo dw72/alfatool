@@ -1,0 +1,7 @@
+parameters:
+#    piniu_pages.example.class: Piniu\PagesBundle\Example
+
+services:
+#    piniu_pages.example:
+#        class: %piniu_pages.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

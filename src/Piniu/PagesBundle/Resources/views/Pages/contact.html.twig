@@ -1,0 +1,38 @@
+{% extends 'PiniuPagesBundle::layout.html.twig' %}
+
+{% block title %}Kontakt{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Kontakt</h1>
+    </header>
+
+    {% for flashMessage in app.session.flashbag.get('contact-notice') %}
+        <div class="contact-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="address">
+        <p><strong>AlfaTool sp. z o.o.</strong></p>
+        <p><strong>Adres:</strong> Kacza Górka 12; 65-890 Pogorzela</p>
+        <p><strong>Telefon:</strong> +65 1234567</p>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78897.79453632668!2d17.299435490315084!3d51.832539362913195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470515f661f09c4f%3A0x156c5755fe2cce3f!2sKaczag%C3%B3rka!5e0!3m2!1spl!2s!4v1392304702217" width="700" height="350" frameborder="0"></iframe>
+
+    <h2>Napisz do nas</h2>
+
+    <form action="{{ path('piniu_pages_contact') }}" method="post" {{ form_enctype(form) }} class="contact">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.subject) }}
+        {{ form_row(form.body) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Wyślij wiadomość" />
+    </form>
+{% endblock %}

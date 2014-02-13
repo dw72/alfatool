@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
+            new Piniu\PagesBundle\PiniuPagesBundle(),
             new Piniu\ProductsBundle\PiniuProductsBundle(),
         );
 
