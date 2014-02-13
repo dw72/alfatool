@@ -21,6 +21,17 @@ class ProductRepository extends EntityRepository
             ->getResult();
     }
 
+    public function getAllProductsByCategory($categoryId) {
+        $qb = $this->createQueryBuilder('p')
+            ->select('p', 'c')
+            ->leftJoin('p.category', 'c');
+
+        $qb->where($qb->expr()->eq('c.id', $categoryId));
+
+        return $qb->getQuery()
+            ->getResult();
+    }
+
     public function getProductById($id) {
         $qb = $this->createQueryBuilder('p')
             ->select('p', 'c')

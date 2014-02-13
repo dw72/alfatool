@@ -1,0 +1,29 @@
+
+
+.sidebar .section {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar h3 {
+    line-height: 1.2em;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    background: #eee;
+    padding: 10px;
+}
+
+.sidebar p {
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none
+}
+
+.sidebar ul li {
+    line-height: 1.5em
+}

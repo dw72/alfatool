@@ -3,9 +3,12 @@
 {% block title %}{{ product.name }}{% endblock %}
 
 {% block body %}
+    <header>
+        <h1>Oglądasz produkt</h1>
+    </header>
     <article class="product clearfix">
         <header>
-            <h1>{{ product.name }}</h1>
+            <h2>{{ product.name }}</h2>
         </header>
 
         <div class="data clearfix">
@@ -34,7 +37,11 @@
         <div>
             <h3>Kategoria:</h3>
 
-            <p><a href="#product-{{ product.id }}">{{ product.category.name }}</a></p>
+            <p>
+                <a href="{{ path('piniu_products_by_category', { 'categoryId': product.category.id }) }}">
+                    {{ product.category.name }}
+                </a>
+            </p>
         </div>
     </article>
 {% endblock %}

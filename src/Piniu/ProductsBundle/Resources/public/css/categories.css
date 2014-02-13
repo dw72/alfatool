@@ -1,0 +1,9 @@
+.categories li a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.categories li a:hover {
+    border-bottom: 1px solid #ff3333;
+}

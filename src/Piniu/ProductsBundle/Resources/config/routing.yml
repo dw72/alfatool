@@ -6,4 +6,10 @@ piniu_products_show:
     pattern:  /product/{id}
     defaults: { _controller: PiniuProductsBundle:Products:show }
     requirements:
-        id:  \d+
+        id:   \d+
+
+piniu_products_by_category:
+    pattern:  /category/{categoryId}
+    defaults: { _controller: PiniuProductsBundle:Products:showByCategory}
+    requirements:
+        categoryId:   \d+
