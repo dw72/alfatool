@@ -1,0 +1,42 @@
+{% extends "PiniuProductsBundle::layout.html.twig" %}
+
+{% block body %}
+    {% for product in products %}
+        <article class="product product-{{ product.id }} thumb">
+            <header>
+                <h2><a href="{{ path('piniu_products_show', { 'id': product.id }) }}">{{ product.name }}</a></h2>
+            </header>
+
+            <div class="data">
+                <div class="thumb">
+                    {% if product.image is null %}
+                        <img src="{{ asset('bundles/piniuproducts/images/brak-zdjecia.jpg') }}"/>
+                    {% else %}
+                        <img src="{{ asset(['bundles/piniuproducts/images/', product.image]|join) }}"/>
+                    {% endif %}
+                </div>
+                <div>
+                    <h3>Kategoria:</h3>
+
+                    <p><a href="#product-{{ product.id }}">{{ product.category.name }}</a></p>
+
+                    <h3>Opis:</h3>
+
+                    <p>{{ product.description(200) }}</p>
+                </div>
+                <div class="price">
+                    <h3>Cena:</h3>
+
+                    <p>{{ product.price }} PLN</p>
+                    <a class="button" href="#product-{{ product.id }}">Do koszyka</a>
+                </div>
+            </div>
+
+            <footer class="meta">
+                <p class="continue"><a href="{{ path('piniu_products_show', { 'id': product.id }) }}">Więcej...</a></p>
+            </footer>
+        </article>
+    {% else %}
+        <p>Nie ma żadnych produktów w sklepie</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "PiniuProductsBundle::layout.html.twig" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block body %}
+    <article class="product clearfix">
+        <header>
+            <h2>{{ product.name }}</h2>
+        </header>
+
+        <div class="data clearfix">
+            <div class="image">
+                {% if product.image is null %}
+                    <img src="{{ asset('bundles/piniuproducts/images/brak-zdjecia.jpg') }}" alt="{{ product.name }}"
+                         class="large"/>
+                {% else %}
+                    <img src="{{ asset(['bundles/piniuproducts/images/', product.image]|join) }}"
+                         alt="{{ product.name }}"
+                         class="large"/>
+                {% endif %}
+            </div>
+            <div class="price">
+                <h3>Cena:</h3>
+
+                <p>{{ product.price }} PLN</p>
+                <a class="button" href="#product-{{ product.id }}">Do koszyka</a>
+            </div>
+        </div>
+        <div class="clear">
+            <h3>Opis:</h3>
+
+            <p>{{ product.description }}</p>
+        </div>
+        <div>
+            <h3>Kategoria:</h3>
+
+            <p><a href="#product-{{ product.id }}">{{ product.category.name }}</a></p>
+        </div>
+    </article>
+{% endblock %}

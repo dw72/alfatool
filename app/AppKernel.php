@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
+            new Piniu\ProductsBundle\PiniuProductsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

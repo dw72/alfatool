@@ -1,0 +1,4 @@
+piniu_products:
+    resource: "@PiniuProductsBundle/Resources/config/routing.yml"
+    prefix:   /
+

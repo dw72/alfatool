@@ -1,0 +1,7 @@
+parameters:
+#    piniu_products.example.class: Piniu\ProductsBundle\Example
+
+services:
+#    piniu_products.example:
+#        class: %piniu_products.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

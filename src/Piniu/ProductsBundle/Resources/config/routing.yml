@@ -1,0 +1,9 @@
+piniu_products_homepage:
+    pattern:  /
+    defaults: { _controller: PiniuProductsBundle:Products:index }
+
+piniu_products_show:
+    pattern:  /product/{id}
+    defaults: { _controller: PiniuProductsBundle:Products:show }
+    requirements:
+        id:  \d+
