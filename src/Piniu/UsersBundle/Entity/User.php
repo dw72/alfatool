@@ -4,10 +4,14 @@ namespace Piniu\UsersBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="Piniu\UsersBundle\Repository\UserRepository")
+ * @UniqueEntity(fields="username", message="Nazwa użytkownika jest już zajęta")
+ * @UniqueEntity(fields="email", message="Ten adres email jest już zarejestrowany w naszej bazie użytkowników")
  */
 class User implements AdvancedUserInterface, \Serializable
 {
@@ -20,16 +24,17 @@ class User implements AdvancedUserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=25, unique=true)
+     * @Assert\NotBlank()
      */
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=25)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=40, nullable=true)
      */
     private $lastname;
 
@@ -40,11 +45,15 @@ class User implements AdvancedUserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=40)
+     * @Assert\NotBlank()
+     * @Assert\Length(max = 4096)
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=60, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
@@ -270,7 +279,7 @@ class User implements AdvancedUserInterface, \Serializable
      * @param \Piniu\UsersBundle\Entity\Role $role
      * @return User
      */
-    public function setRole(\Piniu\UsersBundle\Entity\Role $role = null)
+    public function setRole(Role $role = null)
     {
         $this->role = $role;
 

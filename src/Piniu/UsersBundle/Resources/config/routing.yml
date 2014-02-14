@@ -7,3 +7,11 @@ piniu_users_login_check:
 
 piniu_users_logout:
     pattern:  /logout
+
+piniu_users_register:
+    path:     /register
+    defaults: { _controller: PiniuUsersBundle:Security:register }
+
+piniu_users_create:
+    path:     /register/create
+    defaults: { _controller: PiniuUsersBundle:Security:create }

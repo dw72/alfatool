@@ -1,4 +1,4 @@
-.login-error {
+.user-error {
     text-align: center;
     padding: 15px;
     background: #ffdddd;
@@ -7,16 +7,21 @@
     margin-bottom: 10px;
 }
 
-form.login {
+form.user {
     margin-top: 30px;
 }
 
-form.login div {
+form.user label.required:after {
+    content: '*';
+    color: #ff3333;
+}
+
+form.user div {
     clear: left;
     margin-bottom: 10px;
 }
 
-form.login label {
+form.user label {
     float: left;
     margin-right: 10px;
     text-align: right;
@@ -26,14 +31,19 @@ form.login label {
     padding-top: 11px;
 }
 
-form.login input[type="text"],
-form.login input[type="password"] {
+form.user input[type="text"],
+form.user input[type="email"],
+form.user input[type="password"] {
     padding: 5px;
     width: 300px;
     line-height: 24px;
     min-height: 24px;
 }
 
-form.login button[type="submit"] {
+form.user .checkbox {
+    margin-left: 210px;
+}
+
+form.user button[type="submit"] {
     margin-left: 210px;
 }

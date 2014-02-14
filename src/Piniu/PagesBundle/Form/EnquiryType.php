@@ -9,14 +9,14 @@ class EnquiryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', 'text', array('label'  => 'Nazwa'));
+        $builder->add('name', 'text', array('label' => 'Nazwa'));
         $builder->add('email', 'email');
-        $builder->add('subject', 'text', array('label'  => 'Temat'));
-        $builder->add('body', 'textarea', array('label'  => 'Treść'));
+        $builder->add('subject', 'text', array('label' => 'Temat'));
+        $builder->add('body', 'textarea', array('label' => 'Treść'));
     }
 
     public function getName()
     {
-        return 'piniu_pages_contact';
+        return 'piniu_pages_enquiry';
     }
 }

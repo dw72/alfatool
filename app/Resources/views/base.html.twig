@@ -29,6 +29,7 @@
                         <li><a href="{{ path('piniu_pages_regulations') }}">Regulamin</a></li>
                         <li><a href="{{ path('piniu_pages_contact') }}">Kontakt</a></li>
                         {% if not app.user %}
+                            <li><a href="{{ path('piniu_users_register') }}">Zarejestruj</a></li>
                             <li><a href="{{ path('piniu_users_login') }}">Zaloguj</a></li>
                         {% else %}
                             <li><a href="{{ path('piniu_users_logout') }}">Wyloguj</a></li>

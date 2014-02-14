@@ -11,7 +11,7 @@
         </div>
     {% endfor %}
 
-    <form action="{{ path('piniu_users_login_check') }}" method="post" class="login">
+    <form action="{{ path('piniu_users_login_check') }}" method="post" class="user">
         <div>
             <label for="username">Użytkownik lub email:</label>
             <input type="text" id="username" name="_username" value="{{ username }}" required>
@@ -25,6 +25,6 @@
             is redirected to on success (more details below)
             <input type="hidden" name="_target_path" value="/account" />
         #}
-        <button type="submit">login</button>
+        <button type="submit">Zaloguj</button>
     </form>
 {% endblock %}
