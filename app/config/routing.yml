@@ -1,3 +1,7 @@
+piniu_users:
+    resource: "@PiniuUsersBundle/Resources/config/routing.yml"
+    prefix:   /
+
 piniu_pages:
     resource: "@PiniuPagesBundle/Resources/config/routing.yml"
     prefix:   /
@@ -5,4 +9,3 @@ piniu_pages:
 piniu_products:
     resource: "@PiniuProductsBundle/Resources/config/routing.yml"
     prefix:   /
-

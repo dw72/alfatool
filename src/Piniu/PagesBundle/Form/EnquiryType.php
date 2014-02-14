@@ -17,6 +17,6 @@ class EnquiryType extends AbstractType
 
     public function getName()
     {
-        return 'piniu_pagesbundle_contact';
+        return 'piniu_pages_contact';
     }
 }

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
 
             new Piniu\PagesBundle\PiniuPagesBundle(),
             new Piniu\ProductsBundle\PiniuProductsBundle(),
+            new Piniu\UsersBundle\PiniuUsersBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

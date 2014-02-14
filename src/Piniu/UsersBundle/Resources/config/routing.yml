@@ -1,0 +1,9 @@
+piniu_users_login:
+    pattern:  /login
+    defaults: { _controller: PiniuUsersBundle:Security:login }
+
+piniu_users_login_check:
+    pattern:  /login_check
+
+piniu_users_logout:
+    pattern:  /logout

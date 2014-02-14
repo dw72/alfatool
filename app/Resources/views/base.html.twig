@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Najlepsze części do AlfaRomeo 147{% endblock %} - AlfaTool</title>
-        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-        {% block stylesheets %}
-            <link href="http://fonts.googleapis.com/css?family=Dr+Sugiyama" rel="stylesheet">
-            <link href="http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext" rel="stylesheet">
-            {% stylesheets '%kernel.root_dir%/Resources/public/css/*' %}
-                <link href="{{ asset_url }}" rel="stylesheet" media="screen"/>
-            {% endstylesheets %}
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Najlepsze części do AlfaRomeo 147{% endblock %} - AlfaTool</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    {% block stylesheets %}
+        <link href="http://fonts.googleapis.com/css?family=Dr+Sugiyama" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext" rel="stylesheet">
+        {% stylesheets '%kernel.root_dir%/Resources/public/css/*' %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen"/>
+        {% endstylesheets %}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<section id="wrapper">
+    <header id="header">
+        <div class="top">
+            {% if app.user %}
+                <div class="welcome">Witaj <span>{% if app.user.firstname %}{{ app.user.firstname }}{% else %}{{ app.user.username }}{% endif %}</span></div>
+            {% endif %}
+            {% block navigation %}
+                <nav>
+                    <ul class="navigation">
+                        <li><a href="{{ path('piniu_products_homepage') }}">Katalog</a></li>
+                        <li><a href="{{ path('piniu_pages_about') }}">O nas</a></li>
+                        <li><a href="{{ path('piniu_pages_regulations') }}">Regulamin</a></li>
+                        <li><a href="{{ path('piniu_pages_contact') }}">Kontakt</a></li>
+                        {% if not app.user %}
+                            <li><a href="{{ path('piniu_users_login') }}">Zaloguj</a></li>
+                        {% else %}
+                            <li><a href="{{ path('piniu_users_logout') }}">Wyloguj</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endblock %}
+        </div>
+
+        <hgroup class="clearfix">
+            <h2>{% block shop_title %}<a href="{{ path('piniu_products_homepage') }}">AlfaTool</a>{% endblock %}</h2>
+
+            <h3>{% block shop_tagline %}<a href="{{ path('piniu_products_homepage') }}">Najlepsze części do AlfaRomeo
+                    147</a>{% endblock %}</h3>
+        </hgroup>
+    </header>
+
+    <section class="main-col">
+        {% block body %}{% endblock %}
+    </section>
+    <aside class="sidebar">
+        {% block sidebar %}{% endblock %}
+    </aside>
+
+    <div id="footer">
+        {% block footer %}
+            (C)2014 <a href="mailto:zkostka@gostyn.pl">Zbigniew Kostka</a>
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <section id="wrapper">
-            <header id="header">
-                <div class="top">
-                    {% block navigation %}
-                        <nav>
-                            <ul class="navigation">
-                                <li><a href="{{ path('piniu_products_homepage') }}">Katalog</a></li>
-                                <li><a href="{{ path('piniu_pages_about') }}">O nas</a></li>
-                                <li><a href="{{ path('piniu_pages_regulations') }}">Regulamin</a></li>
-                                <li><a href="{{ path('piniu_pages_contact') }}">Kontakt</a></li>
-                            </ul>
-                        </nav>
-                    {% endblock %}
-                </div>
+    </div>
+</section>
 
-                <hgroup class="clearfix">
-                    <h2>{% block shop_title %}<a href="{{ path('piniu_products_homepage') }}">AlfaTool</a>{% endblock %}</h2>
-                    <h3>{% block shop_tagline %}<a href="{{ path('piniu_products_homepage') }}">Najlepsze części do AlfaRomeo 147</a>{% endblock %}</h3>
-                </hgroup>
-            </header>
-
-            <section class="main-col">
-                {% block body %}{% endblock %}
-            </section>
-            <aside class="sidebar">
-                {% block sidebar %}{% endblock %}
-            </aside>
-
-            <div id="footer">
-                {% block footer %}
-                    (C)2014 <a href="mailto:zkostka@gostyn.pl">Zbigniew Kostka</a>
-                {% endblock %}
-            </div>
-        </section>
-
-        {% block javascripts %}{% endblock %}
-    </body>
+{% block javascripts %}{% endblock %}
+</body>
 </html>
