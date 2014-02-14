@@ -14,11 +14,11 @@
     <form action="{{ path('piniu_users_login_check') }}" method="post" class="login">
         <div>
             <label for="username">Użytkownik lub email:</label>
-            <input type="text" id="username" name="_username" value="{{ username }}"/>
+            <input type="text" id="username" name="_username" value="{{ username }}" required>
         </div>
         <div>
             <label for="password">Hasło:</label>
-            <input type="password" id="password" name="_password"/>
+            <input type="password" id="password" name="_password" required>
         </div>
         {#
             If you want to control the URL the user
