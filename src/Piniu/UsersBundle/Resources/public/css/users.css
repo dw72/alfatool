@@ -40,6 +40,10 @@ form.user input[type="password"] {
     min-height: 24px;
 }
 
+form.user .password {
+    margin: 40px 0 30px;
+}
+
 form.user .checkbox {
     margin-left: 210px;
 }

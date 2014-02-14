@@ -5,11 +5,14 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-    outline: none;
     border-color: #ff9999;
     -moz-box-shadow: 0 0 5px #cccccc;
     -webkit-box-shadow: 0 0 5px #cccccc;
     box-shadow: 0 0 5px #cccccc;
+}
+
+input:focus, textarea:focus, button:focus {
+    outline: none;
 }
 
 input[type=submit], input[type=reset], button, a.button {

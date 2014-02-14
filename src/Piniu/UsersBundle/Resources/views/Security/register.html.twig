@@ -7,13 +7,15 @@
 
     <form action="{{ path('piniu_users_create') }}" method="post" {{ form_enctype(form) }} class="user">
         {{ form_errors(form) }}
-
+        <div>
         {{ form_row(form.user.username) }}
         {{ form_row(form.user.firstname) }}
         {{ form_row(form.user.lastname) }}
         {{ form_row(form.user.email) }}
+        </div>
+        <div class="password">
         {{ form_row(form.user.password) }}
-
+        </div>
         <div class="checkbox clearfix">
             {{ form_errors(form.terms) }}
             {{ form_widget(form.terms) }}
