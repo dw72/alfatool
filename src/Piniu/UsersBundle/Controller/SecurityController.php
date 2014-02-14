@@ -13,21 +13,17 @@ class SecurityController extends Controller
 
         // get the login error if there is one
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
-            $error = $request->attributes->get(
-                SecurityContext::AUTHENTICATION_ERROR
-            );
+            $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
         } else {
             $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
             $session->remove(SecurityContext::AUTHENTICATION_ERROR);
         }
 
-        return $this->render(
-            'PiniuUsersBundle:Security:login.html.twig',
-            array(
-                // last username entered by the user
-                'username' => $session->get(SecurityContext::LAST_USERNAME),
-                'error' => $error,
-            )
-        );
+        if (isset($error)) {
+            $session->getFlashBag()->add('login-error', 'Błędna nazwa użytkownika lub hasło!');
+        }
+
+        return $this->render('PiniuUsersBundle:Security:login.html.twig',
+            array('username' => $session->get(SecurityContext::LAST_USERNAME)));
     }
 }

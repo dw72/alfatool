@@ -5,9 +5,11 @@
         <h1>Logowanie</h1>
     </header>
 
-    {% if error %}
-        <div>{{ error.message }}</div>
-    {% endif %}
+    {% for flashMessage in app.session.flashbag.get('login-error') %}
+        <div class="login-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
 
     <form action="{{ path('piniu_users_login_check') }}" method="post" class="login">
         <div>
