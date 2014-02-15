@@ -6,7 +6,7 @@
     </header>
 
     {% for flashMessage in app.session.flashbag.get('login-error') %}
-        <div class="login-error">
+        <div class="message-error">
             {{ flashMessage }}
         </div>
     {% endfor %}

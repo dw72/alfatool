@@ -12,34 +12,40 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
-    public function getAllProducts() {
-        $qb = $this->createQueryBuilder('p')
-            ->select('p', 'c')
-            ->leftJoin('p.category', 'c');
+    public function findAll() {
+        $qb = $this->createQueryBuilder('p');
+        $qb->select('p', 'c')
+           ->leftJoin('p.category', 'c');
 
-        return $qb->getQuery()
-            ->getResult();
+        return $qb->getQuery()->getResult();
     }
 
-    public function getAllProductsByCategory($categoryId) {
-        $qb = $this->createQueryBuilder('p')
-            ->select('p', 'c')
-            ->leftJoin('p.category', 'c');
+    public function findByCategory($categoryId) {
+        $qb = $this->createQueryBuilder('p');
 
-        $qb->where($qb->expr()->eq('c.id', $categoryId));
+        $qb->select('p', 'c')
+           ->leftJoin('p.category', 'c')
+           ->where($qb->expr()->eq('c.id', $categoryId));
 
-        return $qb->getQuery()
-            ->getResult();
+        return $qb->getQuery()->getResult();
     }
 
-    public function getProductById($id) {
-        $qb = $this->createQueryBuilder('p')
-            ->select('p', 'c')
-            ->leftJoin('p.category', 'c');
+    public function findOneById($id) {
+        $qb = $this->createQueryBuilder('p');
 
-        $qb->where($qb->expr()->eq('p.id', $id));
+        $qb->select('p', 'c')
+           ->leftJoin('p.category', 'c')
+           ->where($qb->expr()->eq('p.id', $id));
 
-        return $qb->getQuery()
-            ->getSingleResult();
+        return $qb->getQuery()->getSingleResult();
+    }
+
+    public function findByIds($ids) {
+        $qb = $this->createQueryBuilder('p');
+
+        $qb->select('p')
+           ->where($qb->expr()->in('p.id', $ids));
+
+        return $qb->getQuery()->getResult();
     }
 }

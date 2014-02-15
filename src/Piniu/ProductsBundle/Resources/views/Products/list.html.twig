@@ -35,7 +35,7 @@
                     <h3>Cena:</h3>
 
                     <p>{{ product.price }} PLN</p>
-                    <a class="button" href="#product-{{ product.id }}">Do koszyka</a>
+                    <a class="button" href="{{ path('piniu_cart_add', { 'id': product.id }) }}">Do koszyka</a>
                 </div>
             </div>
 

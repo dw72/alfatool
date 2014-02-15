@@ -1,0 +1,15 @@
+piniu_cart_show:
+    pattern:  /cart
+    defaults: { _controller: PiniuCartBundle:Cart:show }
+
+piniu_cart_add:
+    pattern:  /cart/add/{id}
+    defaults: { _controller: PiniuCartBundle:Cart:add }
+    requirements:
+        id:   \d+
+
+piniu_cart_remove:
+    pattern:  /cart/remove/{id}
+    defaults: { _controller: PiniuCartBundle:Cart:remove }
+    requirements:
+        id:   \d+

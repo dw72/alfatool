@@ -8,7 +8,7 @@
     </header>
 
     {% for flashMessage in app.session.flashbag.get('contact-notice') %}
-        <div class="contact-notice">
+        <div class="message-notice">
             {{ flashMessage }}
         </div>
     {% endfor %}

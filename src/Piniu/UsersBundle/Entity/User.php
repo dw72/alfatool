@@ -151,7 +151,7 @@ class User implements AdvancedUserInterface, \Serializable
     }
 
     /**
-     * @see \Serializable::serialize()
+     * @see \serlizable::serialize()
      */
     public function serialize()
     {

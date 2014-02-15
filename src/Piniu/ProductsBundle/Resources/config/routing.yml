@@ -1,6 +1,6 @@
-piniu_products_homepage:
+piniu_products_list:
     pattern:  /
-    defaults: { _controller: PiniuProductsBundle:Products:index }
+    defaults: { _controller: PiniuProductsBundle:Products:list }
 
 piniu_products_show:
     pattern:  /product/{id}

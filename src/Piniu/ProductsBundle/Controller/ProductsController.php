@@ -11,26 +11,26 @@ class ProductsController extends Controller
         return $this->getDoctrine()->getManager()->getRepository('PiniuProductsBundle:'.$repositoryName);
     }
 
-    public function indexAction()
+    public function listAction()
     {
-        $products = $this->getRepository()->getAllProducts();
+        $products = $this->getRepository()->findAll();
 
-        return $this->render('PiniuProductsBundle:Products:index.html.twig', array('products' => $products));
+        return $this->render('PiniuProductsBundle:Products:list.html.twig', array('products' => $products));
     }
 
     public function showAction($id)
     {
-        $product = $this->getRepository()->getProductById($id);
+        $product = $this->getRepository()->findOneById($id);
 
         return $this->render('PiniuProductsBundle:Products:show.html.twig', array('product' => $product));
     }
 
     public function showByCategoryAction($categoryId)
     {
-        $products = $this->getRepository()->getAllProductsByCategory($categoryId);
+        $products = $this->getRepository()->findByCategory($categoryId);
         $category = $this->getRepository('Category')->find($categoryId);
 
-        return $this->render('PiniuProductsBundle:Products:index.html.twig',
+        return $this->render('PiniuProductsBundle:Products:list.html.twig',
             array('products' => $products, 'category' => $category));
     }
 }

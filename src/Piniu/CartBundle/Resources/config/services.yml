@@ -1,0 +1,7 @@
+parameters:
+#    piniu_cart.example.class: Piniu\CartBundle\Example
+
+services:
+#    piniu_cart.example:
+#        class: %piniu_cart.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

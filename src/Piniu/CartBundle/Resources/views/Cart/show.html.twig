@@ -1,0 +1,28 @@
+{% extends 'PiniuCartBundle::layout.html.twig' %}
+
+{% block body %}
+    <header>
+        <h1>Twój koszyk</h1>
+    </header>
+
+    {% for flashMessage in app.session.flashbag.get('cart-error') %}
+        <div class="message-error">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('cart-notice') %}
+        <div class="message-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% if products is defined %}
+        <ul>
+            {% for product in products %}
+                <li>{{ product.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="message-notice">Twój koszyk jest pusty</div>
+    {% endif %}
+{% endblock %}

@@ -34,8 +34,7 @@ class SecurityController extends Controller
         $registration = new Registration();
         $form = $this->createForm(new RegistrationType(), $registration);
 
-        return $this->render(
-            'PiniuUsersBundle:Security:register.html.twig',
+        return $this->render('PiniuUsersBundle:Security:register.html.twig',
             array('form' => $form->createView())
         );
     }

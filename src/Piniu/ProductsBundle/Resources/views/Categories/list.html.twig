@@ -2,7 +2,7 @@
     <h3>Kategorie</h3>
 
     <ul class="categories">
-        <li><a href="{{ path('piniu_products_homepage') }}">Wszystkie</a></li>
+        <li><a href="{{ path('piniu_products_list') }}">Wszystkie</a></li>
         {% for category in categories %}
             <li>
                 <a href="{{ path('piniu_products_by_category', { 'categoryId': category.id }) }}">{{ category.name }}</a>

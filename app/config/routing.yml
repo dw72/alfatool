@@ -1,3 +1,7 @@
+piniu_cart:
+    resource: "@PiniuCartBundle/Resources/config/routing.yml"
+    prefix:   /
+
 piniu_users:
     resource: "@PiniuUsersBundle/Resources/config/routing.yml"
     prefix:   /
