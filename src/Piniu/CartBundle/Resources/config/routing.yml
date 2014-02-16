@@ -8,8 +8,16 @@ piniu_cart_add:
     requirements:
         id:   \d+
 
+piniu_cart_update:
+    pattern:  /cart/update
+    defaults: { _controller: PiniuCartBundle:Cart:update }
+
 piniu_cart_remove:
     pattern:  /cart/remove/{id}
     defaults: { _controller: PiniuCartBundle:Cart:remove }
     requirements:
         id:   \d+
+
+piniu_cart_clear:
+    pattern:  /cart/clear
+    defaults: { _controller: PiniuCartBundle:Cart:clear }

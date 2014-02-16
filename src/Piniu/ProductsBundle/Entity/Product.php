@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="products")
  * @ORM\HasLifecycleCallbacks
  */
-class Product implements \Serializable
+class Product
 {
 
     /**
@@ -67,28 +67,6 @@ class Product implements \Serializable
     public function setUpdatedValue()
     {
         $this->setUpdated(new \DateTime());
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function serialize()
-    {
-        return serialize(array(
-            $this->id,
-            $this->name,
-        ));
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function unserialize($serialized)
-    {
-        list (
-            $this->id,
-            $this->name,
-            ) = unserialize($serialized);
     }
 
     /**

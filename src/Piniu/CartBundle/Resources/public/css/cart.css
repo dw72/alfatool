@@ -1,0 +1,71 @@
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.product div, .header div {
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.header, .product, .footer {
+    width: 100%;
+}
+
+.header {
+    padding: 10px 0;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.index {
+    width: 30px;
+    text-align: center;
+}
+
+.name {
+    width: 395px;
+}
+
+.price {
+    width: 100px;
+    text-align: right;
+}
+
+.quantity {
+    width: 60px;
+}
+
+input.quantity {
+    text-align: center;
+}
+
+.operations a {
+    width: 100%;
+}
+
+.footer div {
+    margin-top: 15px;
+}
+
+.footer .price, .footer .total {
+    font-weight: bold;
+}
+
+.total {
+    width: 428px;
+    text-align: right;
+}
+
+.finalize {
+    margin-top: 15px;
+    margin-left: 375px;
+}
+
+.button.highlight {
+    background-color: #6c9b0f;
+}

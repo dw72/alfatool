@@ -15,15 +15,37 @@ input:focus, textarea:focus, button:focus {
     outline: none;
 }
 
-input[type=submit], input[type=reset], button, a.button {
-    margin: 0;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    padding: 5px;
+    line-height: 24px;
+    min-height: 24px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=submit],
+input[type=reset],
+button,
+a.button {
     padding: 10px 15px;
     background-color: #ff3333;
     border: none !important;
     color: #ffffff !important;
 }
 
-input[type=submit]:hover, input[type=reset]:hover, button:hover, a.button:hover {
+a.button {
+    padding: 9px 15px;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover,
+button:hover,
+a.button:hover {
     background-color: #333333;
     -moz-box-shadow: 0 0 5px #cccccc;
     -webkit-box-shadow: 0 0 5px #cccccc;

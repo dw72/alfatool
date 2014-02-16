@@ -24,10 +24,7 @@ form.contact label {
 
 form.contact input[type="text"],
 form.contact input[type="email"] {
-    padding: 5px;
     width: 500px;
-    line-height: 24px;
-    min-height: 24px;
 }
 
 form.contact textarea {

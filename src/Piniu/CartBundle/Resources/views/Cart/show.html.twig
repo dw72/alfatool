@@ -16,13 +16,43 @@
         </div>
     {% endfor %}
 
-    {% if products is defined %}
-        <ul>
-            {% for product in products %}
-                <li>{{ product.name }}</li>
+    {% if cart is not empty %}
+        <form action="{{ path('piniu_cart_update') }}" method="post" class="product">
+            <div class="header">
+                <div class="index center">Lp.</div>
+                <div class="name">Produkt</div>
+                <div class="price">Cena</div>
+                <div class="quantity">Ilość</div>
+                <div class="operations">Operacje</div>
+            </div>
+            {% set sum = 0 %}
+            {% for product in cart %}
+                <div class="product">
+                    <div class="index">{{ loop.index }}</div>
+                    <div class="name">{{ product.name }}</div>
+                    <div class="price">{{ product.price|number_format(2) }}</div>
+                    <input class="quantity" value="{{ product.quantity|number_format(0) }}" name="quantity-{{ product.id }}"
+                           type="number">
+
+                    <div class="operations">
+                        <a href="{{ path('piniu_cart_remove', { 'id': product.id }) }}" class="button">Usuń</a>
+                    </div>
+                </div>
+                {% set sum = sum + (product.price * product.quantity) %}
             {% endfor %}
-        </ul>
+            <div div class="footer">
+                <div class="total">Razem</div>
+                <div class="price">{{ sum|number_format(2) }}</div>
+                <div class="operations">
+                    <button type="submit">Przelicz koszyk</button>
+                </div>
+            </div>
+            <div class="finalize">
+                <a href="{{ path('piniu_cart_clear') }}" class="button">Wyczyść koszyk</a>
+                <a href="" class="button highlight">Finalizuj zamówienie</a>
+            </div>
+        </form>
     {% else %}
-        <div class="message-notice">Twój koszyk jest pusty</div>
+        <h3>Nie masz żadnych produktów w koszyku</h3>
     {% endif %}
 {% endblock %}

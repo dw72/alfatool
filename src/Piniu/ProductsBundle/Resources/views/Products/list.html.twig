@@ -12,11 +12,13 @@
 
             <div class="data">
                 <div class="thumb">
-                    {% if product.image is null %}
-                        <img src="{{ asset('bundles/piniuproducts/images/brak-zdjecia.jpg') }}"/>
-                    {% else %}
-                        <img src="{{ asset(['bundles/piniuproducts/images/', product.image]|join) }}"/>
-                    {% endif %}
+                    <a href="{{ path('piniu_products_show', { 'id': product.id }) }}">
+                        {% if product.image is null %}
+                            <img src="{{ asset('bundles/piniuproducts/images/brak-zdjecia.jpg') }}"/>
+                        {% else %}
+                            <img src="{{ asset(['bundles/piniuproducts/images/', product.image]|join) }}"/>
+                        {% endif %}
+                    </a>
                 </div>
                 <div>
                     <h3>Kategoria:</h3>

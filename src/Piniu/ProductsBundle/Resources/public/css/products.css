@@ -44,7 +44,7 @@
 }
 
 .product img.large {
-    width: 500px;
+    width: 550px;
     min-height: auto;
     max-height: none;
 }
@@ -63,4 +63,8 @@ color: #666;
 .product .meta p {
 margin-bottom: 5px;
 line-height: 1.2em;
+}
+
+.product .button {
+    background-color: #6c9b0f;
 }

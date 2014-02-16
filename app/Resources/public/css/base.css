@@ -7,6 +7,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 0
 }
 
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block
 }
@@ -127,7 +133,7 @@ body {
 }
 
 .main {
-    width: 700px;
+    width: 720px;
     display: inline-block;
     float: left;
     border-right: 1px solid #ccc;
@@ -209,20 +215,19 @@ body {
 }
 
 /* Messages */
-.message-notice {
-    text-align: center;
+.message-notice, .message-error {
     padding: 15px;
-    background: #DFF2BF;
+    margin-bottom: 25px;
+    text-align: center;
     border: 1px solid;
-    color: #4F8A10;
-    margin-bottom: 10px;
+}
+
+.message-notice {
+    background: #d2f78a;
+    color: #6c9b0f;
 }
 
 .message-error {
-    text-align: center;
-    padding: 15px;
-    background: #ffdddd;
-    border: 1px solid;
-    color: #ff3333;
-    margin-bottom: 10px;
+    background: #ff8f8f;
+    color: #a61111;
 }

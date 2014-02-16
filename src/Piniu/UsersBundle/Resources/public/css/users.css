@@ -25,10 +25,7 @@ form.user label {
 form.user input[type="text"],
 form.user input[type="email"],
 form.user input[type="password"] {
-    padding: 5px;
     width: 300px;
-    line-height: 24px;
-    min-height: 24px;
 }
 
 form.user .password {
