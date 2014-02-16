@@ -16,7 +16,8 @@ class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username', 'text', array('label' => 'Użytkownik'));
+        $builder->add('username', 'text',
+            array('label' => 'Użytkownik', 'attr' => array('autofocus' => 'autofocus')));
         $builder->add('firstname', 'text', array('label' => 'Imię', 'required' => false));
         $builder->add('lastname', 'text', array('label' => 'Nazwisko', 'required' => false));
         $builder->add('email', 'email');

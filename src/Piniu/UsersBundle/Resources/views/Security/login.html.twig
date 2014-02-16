@@ -14,7 +14,7 @@
     <form action="{{ path('piniu_users_login_check') }}" method="post" class="user">
         <div>
             <label for="username">Użytkownik lub email:</label>
-            <input type="text" id="username" name="_username" value="{{ username }}" required>
+            <input type="text" id="username" name="_username" value="{{ username }}" required autofocus="autofocus">
         </div>
         <div>
             <label for="password">Hasło:</label>
